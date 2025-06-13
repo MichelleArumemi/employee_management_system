@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { BellIcon, CheckIcon } from '@heroicons/react/outline';
-import NotificationContext from '../../../context/notification/notificationContext';
+import NotificationContext from '../../../context/notification/notificationContext.jsx';
 import UserContext from '../../../context/user/userContext';
-import formatDate from '../../../utils/formatDate';
+import { formatDate } from '../../../utils/formatDate';
+
 const Notifications = () => {
   const notificationContext = useContext(NotificationContext);
   const userContext = useContext(UserContext);

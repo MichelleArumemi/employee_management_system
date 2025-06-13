@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CashIcon, DocumentDownloadIcon, PlusIcon, RefreshIcon } from '@heroicons/react/outline';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import PayrollContext from '../context/payroll/payrollContext';
-import UserContext from '../context/user/userContext';
+import PayrollContext from '../context/payroll/payrollContext.jsx';
+import UserContext from '../context/user/userContext.jsx';
 import { formatCurrency, formatDate } from '../../../utils/format';
 import { toast } from 'react-toastify';
 

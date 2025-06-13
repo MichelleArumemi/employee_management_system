@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import LeaveContext from '../context/leave/leaveContext';
-import UserContext from '../context/user/userContext';
-import formatDate from '../../../utils/formatDate';
+import LeaveContext from '../context/leave/leaveContext.jsx';
+import UserContext from '../context/user/userContext.jsx';
+import formatDate from '../../../utils/formatDate.jsx';
 const AdminLeaveApproval = () => {
   const leaveContext = useContext(LeaveContext);
   const userContext = useContext(UserContext);

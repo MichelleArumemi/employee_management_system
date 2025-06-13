@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AttendanceContext from '../context/attendance/attendanceContext';
-import UserContext from '../context/user/userContext';
+import AttendanceContext from '../context/attendance/attendanceContext.jsx';
+import UserContext from '../context/user/userContext.jsx';
 import formatDate from '../../../utils/formatDate';
 const AdminAttendance = () => {
   const { attendance, getAttendance, loading, error } = useContext(AttendanceContext);

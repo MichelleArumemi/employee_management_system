@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 // import { CheckCircleIcon, XCircleIcon, ClockIcon } from '@heroicons/react/24/outline';
 
-import LeaveContext from '../../../context/leave/leaveContext';
-import UserContext from '../../../context/user/userContext';
+import LeaveContext from '../../../context/leave/leaveContext.jsx';
+import UserContext from '../../../context/user/userContext.jsx';
 import formatDate from '../../../utils/formatDate';
 const Leaves = () => {
   const leaveContext = useContext(LeaveContext);

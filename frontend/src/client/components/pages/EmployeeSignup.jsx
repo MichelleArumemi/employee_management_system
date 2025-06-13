@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import useAuth from '../../../context/auth/useAuth'// Adjust the import path as necessary
+import {useAuth} from '../../../context/auth/AuthProvider'// Adjust the import path as necessary
 import { useNavigate, Link } from 'react-router-dom';
-
+import React from 'react';
 const EmployeeSignup = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -11,11 +11,10 @@ const EmployeeSignup = () => {
     confirmPassword: '',
     role: 'employee', // Default role for employee signup
     position: '',
-    salary: ''
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const { signup, loading } = useAuth();
+  const { employeesignup, loading } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -42,12 +41,12 @@ const EmployeeSignup = () => {
         password: formData.password,
         role: formData.role, // This will be 'employee' by default
         position: formData.position,
-        salary: formData.salary ? Number(formData.salary) : undefined
-      };
+        };
 
-      await signup(userData);
+      await employeesignup(userData);
       setSuccess(true);
-      setTimeout(() => navigate('/login'), 2000);
+      // Immediately redirect to login page after signup
+      navigate('/login');
     } catch (err) {
       setError(err.message || 'Signup failed');
     }
@@ -228,28 +227,7 @@ const EmployeeSignup = () => {
               </div>
             </div>
 
-            <div>
-              <label htmlFor="salary" className="block text-sm font-medium text-gray-700">
-                Salary (optional)
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <span className="text-gray-500 sm:text-sm">$</span>
-                </div>
-                <input
-                  id="salary"
-                  name="salary"
-                  type="number"
-                  value={formData.salary}
-                  onChange={handleChange}
-                  className="appearance-none block w-full pl-7 pr-12 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder="0.00"
-                />
-                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                  <span className="text-gray-500 sm:text-sm">USD</span>
-                </div>
-              </div>
-            </div>
+            {/* Removed extraneous div that caused JSX tag mismatch */}
 
             <div>
               <button

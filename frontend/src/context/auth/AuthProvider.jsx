@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     
     try {
       // Make API call to your backend login endpoint
-      const response = await axios.post('/api/auth/login', credentials);
+      const response = await axios.post('/api/v1/auth/login', credentials);
       
       const { user, token, role } = response.data;
       
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       // Optional: Call backend logout endpoint
-      await axios.post('/api/auth/logout');
+      await axios.post('/api/v1/auth/logout');
     } catch (err) {
       console.error('Logout error:', err);
     } finally {
@@ -62,12 +62,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Register function (bonus)
-  const register = async (userData) => {
+  const employeesignup = async (userData) => {
     setLoading(true);
     setError(null);
     
     try {
-      const response = await axios.post('/api/auth/register', userData);
+      const response = await axios.post('/api/v1/auth/employeesignup', userData);
       const { user, token, role } = response.data;
       
       if (token) {
@@ -81,9 +81,9 @@ export const AuthProvider = ({ children }) => {
       
       return { success: true, user, role };
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed');
+      setError(err.response?.data?.message || 'Sign Up failed');
       setLoading(false);
-      return { success: false, error: err.response?.data?.message || 'Registration failed' };
+      return { success: false, error: err.response?.data?.message || 'Sign Up failed' };
     }
   };
 
@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }) => {
       error,
       login,
       logout,
-      register,
+      employeesignup,
       isAuthenticated,
       hasRole
     }}>

@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ClockIcon, CalendarIcon, CashIcon, DocumentTextIcon } from '@heroicons/react/outline';
 import UserContext from '../context/user/userContext';
-import AttendanceContext from '../context/attendance/attendanceContext';
-import LeaveContext from '../context/leave/leaveContext';
-import PayrollContext from '../context/payroll/payrollContext';
+import AttendanceContext from '../context/attendance/attendanceContext.jsx';
+import LeaveContext from '../context/leave/leaveContext.jsx';
+import PayrollContext from '../context/payroll/payrollContext.jsx';
 
 const EmployeeView = () => {
   const { id } = useParams();

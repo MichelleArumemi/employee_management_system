@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { BellIcon, PaperAirplaneIcon } from '@heroicons/react/outline';
 import UserContext from '../context/user/userContext';
-import NotificationContext from '../context/notification/notificationContext';
+import NotificationContext from '../context/notification/notificationContext.jsx';
 
 const NotificationsAdmin = () => {
   const userContext = useContext(UserContext);

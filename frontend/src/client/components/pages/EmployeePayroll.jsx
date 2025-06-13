@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { CashIcon, DocumentDownloadIcon } from '@heroicons/react/outline';
-import PayrollContext from '../../../context/payroll/payrollContext';
-import UserContext from '../../../context/user/userContext';
+import PayrollContext from '../../../context/payroll/payrollContext.jsx';
+import UserContext from '../../../context/user/userContext.jsx';
 import { formatDate, formatCurrency } from '../../../utils/format';
 
 const Payroll = () => {

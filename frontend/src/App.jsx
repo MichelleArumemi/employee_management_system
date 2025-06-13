@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Context Providers
-import { AuthProvider } from './context/auth/AuthProvider.jsx';
+import AuthProvider from './context/auth/AuthProvider.jsx';
 import { AttendanceProvider } from './context/attendance/attendanceContext.jsx';
 import { LeaveProvider } from './context/leave/leaveContext.jsx';
 import { PayrollProvider } from './context/payroll/payrollContext.jsx';
@@ -47,12 +47,12 @@ const App = () => {
     <Router>
       <Routes>
         {/* Public Auth Routes */}
-        <Route path="/login" element={<EmployeeLogin />} />
-        <Route path="/signup" element={<EmployeeSignup />} />
+        <Route path="/employeelogin" element={<EmployeeLogin />} />
+        <Route path="/employeesignup" element={<EmployeeSignup />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
 
         {/* Redirect root path to employee login by default */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/employeelogin" replace />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
 
         {/* Private Employee Routes */}
